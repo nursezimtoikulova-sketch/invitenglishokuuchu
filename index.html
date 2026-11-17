@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ky">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>English with Nursezim · Окуучулар</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.hero{background:radial-gradient(120% 90% at 50% 0%,#ff5a78 0%,#c21d41 40%,var(--cherry-d) 100%)}
+.codef{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;max-width:560px;position:relative;z-index:2}
+.codef input{flex:1;min-width:200px;font-family:var(--hf);font-size:24px;letter-spacing:3px;text-transform:uppercase;padding:14px 18px;border:0;border-radius:18px;box-shadow:0 6px 0 rgba(0,0,0,.25)}
+.codef input.no{animation:shake .3s}
+.codef .btn{font-size:18px;padding:14px 24px}
+.cfb{width:100%;font-weight:800;min-height:24px;color:#fff3c4}
+.lcards{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.lc{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:18px;display:flex;flex-direction:column;gap:12px;box-shadow:0 10px 0 var(--wall)}
+.lc h4{margin:0;font-size:16px}
+.lc .gb{display:flex;flex-wrap:wrap;gap:6px}
+.lc .gb button{border:0;border-radius:14px;padding:8px 11px;font:inherit;font-weight:800;font-size:14px;cursor:pointer;color:#fff;box-shadow:inset 0 -4px 0 rgba(0,0,0,.2)}
+.stars{display:inline-flex;align-items:center;gap:8px;background:var(--butter);color:var(--ink);font-family:var(--hf);font-weight:800;padding:8px 16px;border-radius:999px;box-shadow:0 4px 0 #b88900;white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+ <a class="mark" href="#home"><i>En</i><span>English with Nursezim</span></a>
+ <nav><a href="#home">Башкы</a><a href="#lessons">Менин сабактарым</a><a href="#words">📚 Сөздөрүм</a><a href="#grammar">📘 Грамматика</a></nav>
+ <span class="stars" id="stars">⭐ 0</span>
+</div></div>
+
+<div class="hero"><div class="wrap">
+ <span class="orb a"></span><span class="orb b"></span><span class="orb c"></span><span class="ring"></span>
+ <span class="who">🎒 Нурсезим эженин окуучулары үчүн</span>
+ <h1>Hello! <em>Let's play</em><br>and speak English!</h1>
+ <p class="lead">Мугалим сабакта берген кодду жаз: сабактын сөздөрү, оюндары жана ырлары ачылат. Ойногон сайын ⭐ чогулт!</p>
+ <form class="codef" autocomplete="off"><input id="code" type="text" placeholder="Мисалы: APPLE1234" aria-label="Сабактын коду"><button class="btn alt" type="submit">🔑 Ачуу</button><div class="cfb"></div></form>
+ <div class="hall" id="hall"></div>
+</div></div>
+
+<main class="wrap">
+<section class="page" id="home">
+ <div class="grid">
+  <div class="card lift" style="background:#fff1c9"><h4>🔑 Код</h4><p>Ар бир сабактын өз коду бар. Кодду мугалим берет.</p></div>
+  <div class="card lift" style="background:#fde3e8"><h4>🔊 Сөздү ук</h4><p>Сөздү бас: компьютер аны англисче окуп берет. Кайталап айт!</p></div>
+  <div class="card lift" style="background:#d6f4e9"><h4>🎮 7 оюн</h4><p>Жупташтыруу, квиз, сөз издөө, эс тутум, сүйлөм түзүү, тамгалар, дөңгөлөк.</p></div>
+  <div class="card lift" style="background:#dcebfb"><h4>⭐ Жылдыздар</h4><p>Туура жооп = жылдыз. Ачылган сабактар жана жылдыздар ушул түзмөктө сакталат.</p></div>
+ </div>
+</section>
+<section class="page" id="lessons">
+ <h2>Менин сабактарым</h2>
+ <p class="sub">Код менен ачылган сабактар. Жаңы код алсаң, башкы бетке жаз.</p>
+ <form class="codef" autocomplete="off" style="margin:0 0 18px"><input type="text" placeholder="Жаңы код" aria-label="Сабактын коду" style="font-size:18px;padding:10px 14px;box-shadow:0 4px 0 var(--line);border:2px solid var(--line)"><button class="btn" type="submit">🔑 Ачуу</button><div class="cfb" style="color:var(--cherry)"></div></form>
+ <div class="chips" id="gchips"></div>
+ <div class="lcards" id="lcards"></div>
+</section>
+<section class="page" id="words">
+ <h2>📚 Менин сөздөрүм</h2>
+ <p class="sub">Ачылган бардык сабактардын сөздөрү. Кайталоо оюндары өткөн сабактардын сөздөрүн аралаштырып берет.</p>
+ <div class="card" style="background:#fff1c9;border:0;margin-bottom:16px"><h4>🔁 Кайталоо оюндары</h4><div class="gb" id="revbtns" style="display:flex;flex-wrap:wrap;gap:8px"></div></div>
+ <div class="words" id="allwords"></div>
+</section>
+<section class="page" id="grammar">
+ <h2>📘 Грамматика</h2>
+ <p class="sub">Эрежелер кыргызча түшүндүрмө менен: качан колдонулат, түзүлүшү (+ − ?), мисалдар, көп кетирилген каталар жана көнүгүүлөр. «Тактага чыгаруу» менен класска көрсөтсө болот.</p>
+ <div class="chips" id="glevels"></div>
+ <div class="grid" id="gtopics"></div>
+</section>
+</main>
+<footer><div class="wrap"><b>English with Nursezim</b> · «НурАиша» билим берүү мекемеси · англис тили</div></footer>
+
+<div id="modal"><div class="mbox"><div class="mhead"><h3 id="mt"></h3><div style="display:flex;gap:8px;align-items:center"><span class="score" id="ms"></span><button class="x" onclick="closeM()" aria-label="Жабуу">×</button></div></div><div id="mb"></div></div></div>
+<script src="data.js"></script>
+<script src="res.js"></script>
+<script src="program.js"></script>
+<script src="codes.js"></script>
+<script src="app.js"></script>
+<script src="grammar.js"></script>
+<script src="prog_ui.js"></script>
+<script src="grammar_ui.js"></script>
+<script src="board_games.js"></script>
+<script src="okuuchu.js"></script>
+</body>
+</html>
